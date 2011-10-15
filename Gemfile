@@ -11,7 +11,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano', '2.9.0'
 
 # To use debugger
 # gem 'ruby-debug'
