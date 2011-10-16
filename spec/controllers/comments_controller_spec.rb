@@ -61,47 +61,7 @@ describe CommentsController, 'handling commenting' do
     @mock_post
   end
 
-  describe "with a POST to #index (non-OpenID comment)" do
-    before(:each) do
-      mock_post!
 
-      post :create, :year => '2007', :month => '01', :day => '01', :slug => 'a-post', :comment => {
-        :author => 'Don Alias',
-        :body   => 'This is a comment',
-
-        # Attributes you are not allowed to set
-        :author_url              => 'http://www.enkiblog.com',
-        :author_email            => 'donalias@enkiblog.com',
-        :created_at              => @created_at = 1.year.ago,
-        :updated_at              => @updated_at = 1.year.ago,
-      }
-    end
-
-
-    it "allows setting of author" do
-      assigns(:comment).author.should == 'Don Alias'
-    end
-
-    it "allows setting of body" do
-      assigns(:comment).body.should == 'This is a comment'
-    end
-
-    it "forbids setting of author_url" do
-      assigns(:comment).author_url.should be_blank
-    end
-
-    it "forbids setting of author_email" do
-      assigns(:comment).author_email.should be_blank
-    end
-
-    it "forbids setting of created_at" do
-      assigns(:comment).created_at.should_not == @created_at
-    end
-
-    it "forbids setting of updated_at" do
-      assigns(:comment).updated_at.should_not == @updated_at
-    end
-  end
 end
 
 describe CommentsController, 'with an AJAX request to new' do
