@@ -42,7 +42,7 @@ Enki::Application.configure do
     :port => 587,
     :domain => 'gmail.com',
     :user_name => 'angrygreg@gmail.com',
-    :password => 'Sl0thFight#r',
+    :password => ENV['EMAIL_PASSWORD'],
     :authentication => :plain,
     :enable_starttls_auto => true 
   }
