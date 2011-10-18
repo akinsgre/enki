@@ -41,7 +41,7 @@ Enki::Application.configure do
     :port => 587,
     :domain => 'insomnia-consulting.org',
     :user_name => 'gakins@insomnia-consulting.org',
-    :password => ENV["EMAIL_PASSWORD"],
+    :password => 'ENV["EMAIL_PASSWORD"]',
     :authentication => :plain,
     :enable_starttls_auto => true 
   }
