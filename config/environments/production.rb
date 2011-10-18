@@ -36,6 +36,14 @@ Enki::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+ActionMailer::Base.smtp_settings = {
+:address => 'smtp.gmail.com',
+:port => 587,
+:domain => 'insomnia-consulting.org',
+:authentication => :plain,
+:user_name => 'gakins@insomnia-consulting.org',
+:password => ENV["EMAIL_PASSWORD"]
+}
 
   # Enable threaded mode
   # config.threadsafe!
