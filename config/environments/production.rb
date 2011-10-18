@@ -40,9 +40,9 @@ puts "Password is " + ENV["EMAIL_PASSWORD"]
   ActionMailer::Base.smtp_settings = {
     :address => 'smtp.gmail.com',
     :port => 587,
-    :domain => 'insomnia-consulting.org',
-    :user_name => 'gakins@insomnia-consulting.org',
-    :password => 'ENV["EMAIL_PASSWORD"]',
+    :domain => 'gmail.com',
+    :user_name => 'angrygreg@gmail.com',
+    :password => 'Plym0uthFur7',
     :authentication => :plain,
     :enable_starttls_auto => true 
   }
