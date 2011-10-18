@@ -36,7 +36,7 @@ Enki::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
-puts "Password is " + ENV["EMAIL_PASSWORD"]
+
   ActionMailer::Base.smtp_settings = {
     :address => 'smtp.gmail.com',
     :port => 587,
