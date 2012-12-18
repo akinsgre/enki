@@ -38,13 +38,14 @@ Enki::Application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
   ActionMailer::Base.smtp_settings = {
+    :enable_starttls_auto => true, 
     :address => 'smtp.gmail.com',
     :port => 587,
+    :tls => true,
     :domain => 'gmail.com',
-    :user_name => 'angrygreg@gmail.com',
-    :password => ENV['EMAIL_PASSWORD'],
     :authentication => :plain,
-    :enable_starttls_auto => true 
+    :user_name => 'angrygreg@gmail.com',
+    :password => ENV['EMAIL_PASSWORD']
   }
 
   # Enable threaded mode

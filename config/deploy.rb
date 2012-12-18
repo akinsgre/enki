@@ -15,7 +15,7 @@ role :web, "173.255.238.234"
 role :app, "173.255.238.234", :primary => true
 role :db,  "173.255.238.234", :primary => true
 
-task :after_update_code do
+after 'deploy:update_code' do
      run "cp #{current_path}/config/database.example.yml #{release_path}/config/database.yml"
 end
 
@@ -23,10 +23,10 @@ end
 # these http://github.com/rails/irs_process_scripts
 
 # If you are using Passenger mod_rails uncomment this:
- namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
- end
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  end
+end
