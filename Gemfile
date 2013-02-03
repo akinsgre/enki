@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.4'
-
+gem 'rails', '3.0.11'
+gem 'tlsmail'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -23,7 +23,7 @@ gem 'rack-openid', :require => 'rack/openid'
 gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
 gem 'coderay'
 gem 'lesstile'
-gem 'formtastic'
+gem 'formtastic', '2.1.0'
 gem 'will_paginate', '= 3.0.pre2'
 
 # Bundle gems for the local environment. Make sure to
