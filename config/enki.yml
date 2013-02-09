@@ -1,10 +1,10 @@
 # Configuration options for your blog - customise to taste
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
-title: Insomnia
+title: Insomnia Consulting
 url:   http://insomnia-consulting.org
 author:
   name:    Greg Akins
-  email:   angrygreg@gmail.com
+  email:   gakins@insomnia-consulting.org
   open_id:                  # These are used to login to the admin area
       - http://akinsgre.myopenid.com/
 
