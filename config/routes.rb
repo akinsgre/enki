@@ -2,6 +2,8 @@ Enki::Application.routes.draw do
   get "welcome/index"
   root :to => 'welcome#index'
   match 'posts(.:format)' => 'posts', :action => 'index', :as => :formatted_posts
+  get 'posts/' => 'posts#index'
+#  get 'posts/:id' => 'posts#show'
 
   namespace 'admin' do
     resource :session
