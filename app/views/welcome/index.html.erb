@@ -10,65 +10,73 @@
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
-<body onload="window.defaultStatus='Insomnia Consulting: Software Development Consulting';" >
+<body onload="window.defaultStatus='css Zen Garden: The Beauty in CSS Design';" id="css-zen-garden">
 
-  <div id="container">
-    <div id="intro">
-      <div id="pageHeader"><h1><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
-      </div>
-      <div id="preamble">
-	<h3><span>Welcome</span></h3>
-	<p class="p1"><span>Insomnia Consulting is a software development company which strives to meet the needs of smaller companies and startups.</span></p>
-	<p>Over the years, we've noticed that a business has limited choices when it comes to developing software.  They can hire fulltime IT employees, employ an expensive consulting company, or try to deal with individual programmers.</p>
-	<p>All these options bring complications.  Whether it's a long-term labor commitment, a short-term, drain on cash, or a reliance on a single individual.</p>
-	<p>Insomnia Consulting addresses this by maintaining a pool of freelance developers who, because they are working in their freetime, will usually work at a reduced rate for "extra" cash.  And.. because your contact is with Insomnia, you'll always have a company to rely on and manage the transition between programmers.</p>
+<div id="container">
+	<div id="intro">
+		<div id="pageHeader">
+			<h1><span><%= enki_config[:title] %></span></h1>
+		</div>
+
+		<div id="quickSummary">
+			<p class="p1"><span>Insomnia Consulting is a software development company which strives to meet the needs of smaller companies and startups.</span></p>
+
+		</div>
+
+		<div id="preamble">
+			<h3><span>Welcome</span></h3>
+			<p class="p1"><span>Over the years, we've noticed that a business has limited choices when it comes to developing software.  They can hire fulltime IT employees, employ an expensive consulting company, or try to deal with individual programmers.</span></p>
+			<p class="p2"><span>All these options bring complications.  Whether it's a long-term labor commitment, a short-term drain on cash, or a reliance on a single individual.</span></p>
+			<p class="p3"><span>Insomnia Consulting addresses this by maintaining a pool of freelance developers who, because they are working in their freetime, will usually work at a reduced rate for "extra" cash.  And.. because your contact is with Insomnia, you'll always have a company to rely on and manage the transition between programmers.</span></p>
+			<p class="p1">When you engage Insomnia Consulting we'll meet with you to discuss your needs.  Depending ont he type of project this might result in a open-ended Time and Materials effort, or a Fixed Price project.  Regardless, we'll use our contractors from remote locations to ensure you get quick, inexpensive response.  The project managers at Insomnia Consulting will make sure that your needs are met and visit your location at regular intervals to make sure your needs are being met.<span></span></p>
+		</div>
+	</div>
+
+	<div id="supportingText">
+		<div id="explanation">
+			<h3><span>So What is This About?</span></h3>
+
+		</div>
+
+
+
+		<div id="footer">
+<%= enki_config[:title] %> &#169; <%= enki_config[:author, :name] %>. Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> and <%= link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{enki_config[:url]}/posts.atom" %> Powered by <a href="http://www.enkiblog.com" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.
+		</div>
+
+	</div>
+
 	
-      </div>
-    </div>
-    <div id="navigation">
+	<div id="linkList">
+		<!--extra div for flexibility - this list will probably be the trickiest spot you'll deal with -->
+		<div id="linkList2">
 
-<div id="linklist">
-<div id="linklist2">
-	<h2>Contact</h2>
-<div id="lselect"
-<ul>
-  <li>Phone : 724.398.1023</li>
-  <li>Email : info@insomnia-consulting.org
-</ul>
-</div>
-</div>
-</div>
-<div id="linklist">
-<div id="linklist2">
-        <h2>Pages</h2>
-<div id="lselect"
-
-        <ul>
+		<!-- If you're wondering about the extra &nbsp; at the end of the link, it's a hack to meet WCAG 1 Accessibility. -->
+		<!-- I don't like having to do it, but this is a visual exercise. It's a compromise. -->
+			<div id="lselect">
+				<h3 class="select"><span>Select a Design:</span></h3>
+				<!-- list of links begins here. There will be no more than 8 links per page -->
+				<ul>
           <% page_links_for_navigation.each do |link| -%>
             <li><%= link_to(link.name, link.url) %></li>
           <% end -%>
-        </ul>
-        <% unless category_links_for_navigation.empty? -%>
-          <h2>Categories</h2>
-          <ul>
-            <% category_links_for_navigation.each do |link| -%>
-              <li><%= link_to(link.name, link.url) %></li>
-            <% end -%>
-          </ul>
-        <% end -%>
-        <form method="get" id="sform" action="http://www.google.com/search">
-          <div>
-            <h2><label for="q">Search</label></h2>
 
-            <input type="text" id="q" value="" name="q">
-            <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
-          </div>
-        </form>
-      </div>
+			</div>
 
-      <div id="footer"><%= enki_config[:title] %> &#169; <%= enki_config[:author, :name] %>. Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> and <%= link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{enki_config[:url]}/posts.atom" %>. Powered by <a href="http://www.enkiblog.com" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.</div>
-    </div>
-  </div>
+
+		</div>
+	</div>
+
+
+</div>
+
+<!-- These extra divs/spans may be used as catch-alls to add extra imagery. -->
+<!-- Add a background image to each and use width and height to control sizing, place with absolute positioning -->
+<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div>
+<div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+
 </body>
+</html>
+
 </html>
 

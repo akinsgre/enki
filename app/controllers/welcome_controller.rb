@@ -3,4 +3,5 @@ class WelcomeController < ApplicationController
     render :index, :layout => false
   end
 
+
 end

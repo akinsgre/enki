@@ -1,199 +1,355 @@
-/* css Zen Garden default style v1.02 */
+/* css Zen Garden submission - 'CSS Co., Ltd.', by Benjamin Klemm, http://www.re-bloom.com/ */
 /* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
-
-/* This file based on 'Tranquille' by Dave Shea */
-/* You may use this file as a foundation for any new work, but you may find it easier to start from scratch. */
-/* Not all elements are defined in this file, so you'll most likely want to refer to the xhtml as well. */
-
-/* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
+/* All associated graphics copyright 2007, Benjamin Klemm */
 
 
-/* basic elements */
-html {
+/* IMPORTANT */
+/* This design is not a template. You may not reproduce it elsewhere without the 
+   designer's written permission. However, feel free to study the CSS and use 
+   techniques you learn from it elsewhere. */
+
+
+* {
 	margin: 0;
 	padding: 0;
-	}
-body { 
-	font: 75% georgia, sans-serif;
-	line-height: 1.88889;
-	color: #555753; 
-	background: #fff url(blossoms.jpg) no-repeat bottom right; 
-	margin: 0; 
-	padding: 0;
-	}
-p { 
-	margin-top: 0; 
-	text-align: justify;
-	}
-h3 { 
-	font: italic normal 1.4em georgia, sans-serif;
-	letter-spacing: 1px; 
-	margin-bottom: 0; 
-	color: #7D775C;
-	}
-a:link { 
-	font-weight: bold; 
-	text-decoration: none; 
-	color: #B7A5DF;
-	}
-a:visited { 
-	font-weight: bold; 
-	text-decoration: none; 
-	color: #D4CDDC;
-	}
-a:hover, a:active { 
-	text-decoration: underline; 
-	color: #9685BA;
-	}
-acronym {
-	border-bottom: none;
-	}
-
-
-/* specific divs */
-#container { 
-	background: url(zen-bg.jpg) no-repeat top left; 
-	padding: 0 175px 0 110px;  
-	margin: 0; 
-	position: relative;
-	}
-
-#intro { 
-	min-width: 470px;
-	}
-
-/* using an image to replace text in an h1. This trick courtesy Douglas Bowman, http://www.stopdesign.com/articles/css/replace-text/ */
-#pageHeader h1 { 
-	background: transparent url(h1.gif) no-repeat top left; 
-	margin-top: 10px; 
-	width: 219px; 
-	height: 87px; 
-	float: left;
-	}
-#pageHeader h1 span {
-	display:none
-	}
-#pageHeader h2 { 
-	background: transparent url(h2.gif) no-repeat top left; 
-	margin-top: 58px; 
-	margin-bottom: 40px; 
-	width: 200px; 
-	height: 18px; 
-	float: right;
-	}
-#pageHeader h2 span {
-	display:none
-	}
-#pageHeader {
-	padding-top: 20px;
 }
 
+
+body {
+	background: #DADADA url('../images/bg_body.gif') left top repeat-x;
+	margin: 0 auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#container {
+	margin: 0 auto;
+	width: 100%;
+	position: relative;
+	background: transparent url(bg_container.gif) left top repeat-y;
+	z-index: 1;
+
+	
+}
+
+
+
+/*		Formatierung des Intro Blocks
+-----------------------------------------------------------------------*/
+
+#intro {
+	background: transparent url(../images/bg_intro.jpg) left top no-repeat;
+	position: relative;
+	padding: 1px;
+
+}
+
+
+#pageHeader {
+
+	padding-left: 70px;
+	padding-top: 30px;
+	/* height: 0; */
+	/* left: -1000px; */
+	/* overflow: hidden; */
+	/* position: absolute; */
+	/* top: -1000px; */
+
+}
+
+		#pageHeader h1{
+
+	height: 50px;
+	padding-top: 20px;
+	padding-left:80px;
+			font: bold 2.5em Arial, Helvetica, sans-serif;
+		}
+		
+		#pageHeader h2{
+			font: bold 90%/25px Arial, Helvetica, sans-serif;
+		}
+
 #quickSummary {
-	clear:both; 
-	margin: 20px 20px 20px 10px; 
-	width: 160px; 
-	float: left;
-	}
-#quickSummary p {
-	font: italic 10pt/22pt georgia; 
-	text-align:center;
-	}
+	color: #000;
+	font: normal 75%/18px Arial, Helvetica, sans-serif;
+	right: 60px;	
+	position: absolute;
+	top: 25px;
+}
+
+		#quickSummary .p1 {
+			display: inline;
+			height: 0;
+			left: -1000px;
+			overflow: hidden;
+			position: absolute;
+			top: -1000px;
+			width: 0;
+		}
+		
+		#quickSummary a, #quickSummary a:link, #quickSummary a:visited {
+			color: #F29E00;
+			font-weight: bold;
+		}
+		
+		#quickSummary a:hover, #quickSummary a:active, #quickSummary a:focus {
+			text-decoration: none;
+		}
+
 
 #preamble {
-	clear: right; 
-	padding: 0px 10px 0 10px;
-	}
-#supportingText {	
-	padding-left: 10px; 
-	margin-bottom: 40px;
-	}
+	background: transparent url(bg_preamble.jpg) right top no-repeat;
+	color: #000;
+	/* font: normal Arial, Helvetica, sans-serif; */
+	margin-left: 210px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	height: 100%;
+}
 
-#footer { 
-	text-align: center; 
-	}
-#footer a:link, #footer a:visited { 
-	margin-right: 20px; 
-	}
+		#preamble h3 {
+			height: 37px;
+			margin: 0 0 10px 0;
+			font-size:1.5em;
+		}
+			
+		#preamble acronym {
+			border-bottom:1px dotted #F29E00;
+			color: #F29E00; 
+			font-weight: normal;
+
+		}
+		
+		#preamble p {
+			padding-left: 30px;
+			margin-bottom: 10px;
+			font:15px arial,sans-serif;
+		}
+
+
+
+/*		Formatierung des Content Blocks (supportingText)
+-----------------------------------------------------------------------*/
+
+#supportingText {
+	color: #fff;
+	margin-left: 210px;
+	font: normal 80%/18px Arial, Helvetica, sans-serif;
+	padding: 15px 35px 15px 15px;
+	position: relative;
+	height: 100%;
+}
+
+		#supportingText acronym {
+			border-bottom:1px dotted #F29E00;
+			color: #F29E00; 
+			font-size: 85%;
+			font-weight: normal;
+		}
+
+		#supportingText a, #supportingText a:link, #supportingText a:visited {
+			color: #F29E00; 
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		
+		#supportingText a:hover, #supportingText a:active, #supportingText a:focus {
+			text-decoration: none
+		}
+		
+		#supportingText p {
+			padding-left: 30px;
+		
+		}
+
+
+#explanation {
+
+	float: left;
+}
+
+		#explanation h3 {
+			background: transparent url(hl_sowhat.gif) left top no-repeat;
+			height: 37px;
+			margin: 0 0 10px 1px;
+
+		}
+		
+		#explanation .p1 {
+			background: transparent url(cont_img_01.jpg) 30px 0px no-repeat;
+
+		}
+		
+		
+#participation {
+	margin-left: 265px;
+	margin-top: -23px;
+
+}
+		
+		#participation h3 {
+			background: transparent url(hl_participation.gif) left top no-repeat;
+			height: 37px;
+			margin: 23px 0 10px 1px;
+
+		}
+		
+		#participation .p1 {
+			background: transparent url(cont_img_02.jpg) 30px 0px no-repeat;
+
+		}
+		
+
+#benefits h3 {
+	background: transparent url(hl_benefits.gif) left top no-repeat;
+	height: 37px;
+	margin: 23px 0 10px 1px;
+
+}
+
+
+#requirements {
+	margin-bottom: 50px;
+}
+		
+		#requirements h3 {
+			background: transparent url(hl_requirements.gif) left top no-repeat;
+			height: 37px;
+			margin: 23px 0 10px 1px;
+
+		}
+
+
+#preamble h3 span, #explanation h3 span, #participation h3 span, #benefits h3 span, #requirements h3 span {
+
+	height: 0;
+
+}
 
 #linkList {
-	margin-left: 600px; 
-	position: absolute; 
-	top: 0; 
-	right: 0;
-	}
-#linkList2 { 
-	font: 10px verdana, sans-serif; 
-	background: transparent url(paper-bg.jpg) top left repeat-y; 
-	padding: 10px; 
-	margin-top: 150px; 
-	width: 130px; 
-	}
-#linkList h3.select { 
-	background: transparent url(h3.gif) no-repeat top left; 
-	margin: 10px 0 5px 0; 
-	width: 97px; 
-	height: 16px; 
-	}
-#linkList h3.select span {
-	display:none
-	}
-#linkList h3.favorites { 
-	background: transparent url(h4.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width: 60px; 
-	height: 18px; 
-	}
-#linkList h3.favorites span {
-	display:none
-	}
-#linkList h3.archives { 
-	background: transparent url(h5.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:57px; 
-	height: 14px; 
-	}
-#linkList h3.archives span {
-	display:none
-	}
-#linkList h3.resources { 
-	background: transparent url(h6.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:63px; 
-	height: 10px; 
-	}
-#linkList h3.resources span {
-	display:none
-	}
+	background: transparent url(bg_linkList.gif) 0px 2px repeat-y;
+	color: #fff;
+	font-weight: normal;
+	padding: 25px ;
+	position: absolute;
+	top: 30%;
+}
+		
+		#linkList h3 {
+			padding-left: 10px;
+		}
+		
+		#linkList a, #linkList a:link, #linkList a:visited  {
+			color: #000;
+			text-decoration: underline;
+		}
+		
+		#linkList a:hover, #linkList a:active, #linkList a:focus  {
+			text-decoration: none;
+		}
+		
+		#linkList ul li {
+			font-size: 70%;
+			list-style: square;
+			
+		}
 
 
-#linkList ul {
-	margin: 0;
-	padding: 0;
-	}
-#linkList li {
-	line-height: 2.5ex; 
-	background: transparent url(cr1.gif) no-repeat top center; 
-	display: block; 
-	padding-top: 5px; 
-	margin-bottom: 5px;
-	list-style-type: none;
-	}
-#linkList li a:link {
-	color: #988F5E;
-	}
-#linkList li a:visited {
-	color: #B3AE94;
-	}
+#lselect {
+	background: transparent url(bg_lselect.gif) left bottom no-repeat;
+	padding-bottom: 25px;
+}
+		
+		.select {
+			background: transparent url(h1_lselect.gif) left top no-repeat;
+			display: block;
+			margin: 0 auto;
+			height: 29px;
+
+		}
+		
+		#lselect ul li a {
+			display: block;
+			font: bold 110%/19px Arial, Helvetica, sans-serif;
+		}
+		
+		#lselect ul li a.c {
+			color: #fff;
+			display: inline;
+			font: normal 90%/19px Arial, Helvetica, sans-serif;
+		}
 
 
-#extraDiv1 {
-	background: transparent url(cr2.gif) top left no-repeat; 
-	position: absolute; 
-	top: 40px; 
-	right: 0; 
-	width: 148px; 
-	height: 110px;
-	}
-.accesskey {
-	text-decoration: underline;
-	}
+#larchives {
+	background: transparent url(bg_lselect.gif) left bottom no-repeat;
+	padding: 15px 0 40px 0;
+}
+		
+		
+		.archives {
+			background: transparent url(h1_larchives.gif) left top no-repeat;
+			display: block;
+			margin: 0 auto;
+			height: 29px;
+
+		}
+
+
+#lresources {
+	background: transparent url(bg_lresources.gif) left bottom no-repeat;
+	padding-bottom: 30px;
+}
+
+		
+		.resources {
+			background: transparent url(h1_lresources.gif) left top no-repeat;
+			display: block;
+			margin: 15px auto;
+			height: 29px;
+
+		}
+
+
+#larchives ul li a, #lresources ul li a {
+	font-weight: bold;
+}
+
+
+#lresources ul li, #larchives ul li, #lselect ul li {
+	margin: 14px 0 14px 35px;
+}
+
+
+.resources span, .archives span, .select span {
+	display: inline;
+	height: 0;
+	left: -1000px;
+	overflow: hidden;
+	position: absolute;
+	top: -1000px;
+	width: 0;
+}
+
+
+/*		Footer Formatierung
+-----------------------------------------------------------------------*/
+
+#footer {
+	background: transparent url(bg_footer.gif) left top no-repeat;
+	bottom: -27px;
+	left: 25px;
+	height: 54px;
+	line-height: 50px;
+	position: absolute;
+
+	padding-left: 37px;
+}
+		
+		#footer a, #footer a:link, #footer a:visited {
+			color: #000;
+			padding: 0 6px;
+		}
+		
+		* html #footer {
+			bottom: -28px;
+		}

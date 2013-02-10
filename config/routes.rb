@@ -1,5 +1,6 @@
 Enki::Application.routes.draw do
   get "welcome/index"
+  get "welcome/temp"
   root :to => 'welcome#index'
   match 'posts(.:format)' => 'posts', :action => 'index', :as => :formatted_posts
   get 'posts/' => 'posts#index'
