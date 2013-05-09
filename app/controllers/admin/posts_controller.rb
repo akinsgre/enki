@@ -5,7 +5,7 @@ class Admin::PostsController < Admin::BaseController
     respond_to do |format|
       format.html {
         @posts = Post.paginate(
-          :order => "published_at DESC",
+          :order => "ifnull(published_at, updated_at) DESC",
           :page  => params[:page]
         )
       }
@@ -60,7 +60,7 @@ class Admin::PostsController < Admin::BaseController
 
     respond_to do |format|
       format.js {
-        render :partial => 'posts/post.html.erb', :locals => {:post => @post}
+        render :partial => 'posts/post', :locals => {:post => @post}
       }
     end
   end

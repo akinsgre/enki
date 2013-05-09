@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+# encoding: UTF-8
+>>>>>>> 739b2e9b3d17fcd0cb589d1402e331914d7420cb
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -51,7 +55,11 @@ ActiveRecord::Schema.define(:version => 20110709024316) do
   end
 
   add_index "pages", ["created_at"], :name => "index_pages_on_created_at"
+<<<<<<< HEAD
   add_index "pages", ["slug"], :name => "pages_slug_unique_idx", :unique => true
+=======
+  add_index "pages", ["slug"], :name => "pages_slug_unique_idx"
+>>>>>>> 739b2e9b3d17fcd0cb589d1402e331914d7420cb
   add_index "pages", ["title"], :name => "index_pages_on_title"
 
   create_table "posts", :force => true do |t|
@@ -69,7 +77,11 @@ ActiveRecord::Schema.define(:version => 20110709024316) do
   end
 
   add_index "posts", ["published_at"], :name => "index_posts_on_published_at"
+<<<<<<< HEAD
   add_index "posts", ["slug"], :name => "posts_slug_unique_idx"
+=======
+  add_index "posts", ["slug"], :name => "altered_posts_slug_unique_idx"
+>>>>>>> 739b2e9b3d17fcd0cb589d1402e331914d7420cb
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

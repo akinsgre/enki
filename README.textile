@@ -18,6 +18,7 @@ h2. Quick Start
   # On Debian-based systems: apt-get install libxml2-dev libxslt1-dev
   # On Mac OS X: no action required
 
+  rake secret # Paste output into place in config/initializers/secret_token.rb
   rake db:migrate
   rake            # Run tests
   rails server    # Start the server
@@ -36,6 +37,12 @@ Enki is a compact, easily extendable base for your blog. It does this by being h
 * You don't need a plugin system when you've got decent source control
 * If you're not using OpenID you're a chump
 * Hacking code is the easiest way to customize something
+
+h2. URL path prefix
+
+Enki can run your blog with a URL path prefix.  For example, you can run it at example.com/*blog* instead of blog.example.com.  You can do so with the RAILS_RELATIVE_URL_ROOT environment variable, set either before starting the server or in config/application.rb before Enki::Application.  Uncommenting this line in config/application.rb will enable this behavior in all environments:
+
+<pre><code>ENV['RAILS_RELATIVE_URL_ROOT'] = '/blog'</code></pre>
 
 h2. How it differs from Mephisto
 

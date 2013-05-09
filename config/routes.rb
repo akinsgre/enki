@@ -2,8 +2,7 @@ Enki::Application.routes.draw do
   get "welcome/index"
   get "welcome/temp"
   root :to => 'welcome#index'
-  match 'posts(.:format)' => 'posts', :action => 'index', :as => :formatted_posts
-  get 'posts/' => 'posts#index'
+
 #  get 'posts/:id' => 'posts#show'
 
   namespace 'admin' do
@@ -32,6 +31,10 @@ Enki::Application.routes.draw do
     get ':year/:month/:day/:slug' => 'posts#show'
   end
 
+  scope :to => 'posts#index' do
+    get 'posts.:format', :as => :formatted_posts
+    get '(:tag)', :as => :posts
+  end
 
 
 

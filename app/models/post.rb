@@ -10,12 +10,14 @@ class Post < ActiveRecord::Base
   before_validation       :set_dates
   before_save             :apply_filter
 
-  validates_presence_of   :title, :slug, :body
+  validates               :title, :slug, :body, :presence => true
 
   validate                :validate_published_at_natural
 
   def validate_published_at_natural
-    errors.add("published_at_natural", "Unable to parse time") unless published?
+    if published_at_natural.present? && !published?
+      errors.add("published_at_natural", "Unable to parse time")
+    end
   end
 
   attr_accessor :minor_edit
@@ -33,7 +35,7 @@ class Post < ActiveRecord::Base
 
   attr_accessor :published_at_natural
   def published_at_natural
-    @published_at_natural ||= published_at.send_with_default(:strftime, 'now', "%Y-%m-%d %H:%M")
+    @published_at_natural ||= published_at.send_with_default(:strftime, '', "%Y-%m-%d %H:%M")
   end
 
   class << self
@@ -89,8 +91,9 @@ class Post < ActiveRecord::Base
 
   def destroy_with_undo
     transaction do
+      undo = DeletePostUndo.create_undo(self)
       self.destroy
-      return DeletePostUndo.create_undo(self)
+      return undo
     end
   end
 
@@ -104,7 +107,13 @@ class Post < ActiveRecord::Base
 
   def set_dates
     self.edited_at = Time.now if self.edited_at.nil? || !minor_edit?
-    self.published_at = Chronic.parse(self.published_at_natural)
+    unless self.published_at_natural.nil?
+      if self.published_at_natural.blank?
+        self.published_at = nil
+      elsif new_published_at = Chronic.parse(self.published_at_natural)
+        self.published_at = new_published_at
+      end
+    end
   end
 
   def denormalize_comments_count!
