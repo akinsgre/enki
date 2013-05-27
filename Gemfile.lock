@@ -25,10 +25,6 @@ GEM
       activesupport (= 3.2.13)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activerecord-jdbc-adapter (1.2.9)
-    activerecord-jdbcsqlite3-adapter (1.2.9)
-      activerecord-jdbc-adapter (~> 1.2.9)
-      jdbc-sqlite3 (~> 3.7.2)
     activeresource (3.2.13)
       activemodel (= 3.2.13)
       activesupport (= 3.2.13)
@@ -37,7 +33,6 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.4)
     arel (3.0.2)
-    bouncy-castle-java (1.5.0147)
     builder (3.0.4)
     capistrano (2.9.0)
       highline
@@ -82,14 +77,10 @@ GEM
     highline (1.6.19)
     hike (1.2.2)
     i18n (0.6.1)
-    jdbc-sqlite3 (3.7.2.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jruby-openssl (0.8.8)
-      bouncy-castle-java (>= 1.5.0147)
-    jruby-rack (1.1.13.2)
     json (1.8.0)
     json (1.8.0-java)
     launchy (2.3.0)
@@ -173,10 +164,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    trinidad (1.4.4)
-      jruby-rack (>= 1.1.10)
-      trinidad_jars (>= 1.1.0)
-    trinidad_jars (1.2.3)
     tzinfo (0.3.37)
     webrat (0.7.3)
       nokogiri (>= 1.2.0)
@@ -193,7 +180,6 @@ PLATFORMS
 DEPENDENCIES
   RedCloth (~> 4.2.9)
   aaronh-chronic
-  activerecord-jdbcsqlite3-adapter
   capistrano (= 2.9.0)
   coderay (~> 1.0.5)
   cucumber-rails
@@ -203,7 +189,6 @@ DEPENDENCIES
   factory_girl
   formtastic
   jquery-rails
-  jruby-openssl
   lesstile (~> 1.1.0)
   nokogiri (~> 1.5.0)
   open_id_authentication
@@ -215,6 +200,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   tlsmail (= 0.0.1)
-  trinidad
   webrat
   will_paginate (~> 3.0.2)

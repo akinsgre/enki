@@ -15,6 +15,11 @@ role :web, "173.255.238.234"
 role :app, "173.255.238.234", :primary => true
 role :db,  "173.255.238.234", :primary => true
 
+before 'deploy:update' do
+  run 'export LANG=en_US.UTF-8'
+  run 'export LC_ALL=en_US.UTF-8'
+end
+
 after 'deploy:update_code' do
      run "cp #{current_path}/config/database.example.yml #{release_path}/config/database.yml"
 end

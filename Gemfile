@@ -15,16 +15,9 @@ platforms :ruby do
   gem 'sqlite3'
 end
 
-platforms :jruby do
-  gem 'activerecord-jdbcsqlite3-adapter'
-  gem 'trinidad'
-  gem 'jruby-openssl'
-end
-
 gem 'jquery-rails'
 gem 'tlsmail', '0.0.1'
-# Use unicorn as the web server
-# gem 'unicorn'
+
 
 # Deploy with Capistrano
 gem 'capistrano', '2.9.0'
