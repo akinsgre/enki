@@ -1,4 +1,8 @@
 Enki::Application.configure do
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
