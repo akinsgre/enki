@@ -12,7 +12,7 @@
     <%= stylesheet_link_tag 'bootstrap.min.css' %>
     <%= stylesheet_link_tag 'bootstrap-responsive.min.css' %>
     <%= stylesheet_link_tag 'font-awesome.min.css' %>
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <%= javascript_include_tag 'application' %>
 
     <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
@@ -126,7 +126,7 @@
       <footer id="footer">
         <p class="pull-right"><a href="#top">Back to top</a></p>
         <div class="links">
-          <a href="archives">Posts</a>
+
         </div>
         Made by <a href="http://insomnia-consulting.org">Insomnia Consulting, LLC.</a>. Contact him <a href="mailto:info@insomnia-consulting.org">info@insomnia-consulting.org</a>.<br/>
         Based on <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. </p>
