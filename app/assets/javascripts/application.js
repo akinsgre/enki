@@ -15,3 +15,8 @@
 //= require common
 //= require live-comment-preview
 //= require_self
+//= require bootstrap.min.js
+//= require bootswatch
+//= require bsa
+//= require jquery.smooth-scroll.min.js
+

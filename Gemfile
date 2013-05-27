@@ -22,7 +22,7 @@ platforms :jruby do
 end
 
 gem 'jquery-rails'
-
+gem 'tlsmail', '0.0.1'
 # Use unicorn as the web server
 # gem 'unicorn'
 
