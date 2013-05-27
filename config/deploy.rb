@@ -16,6 +16,7 @@ role :app, "173.255.238.234", :primary => true
 role :db,  "173.255.238.234", :primary => true
 
 before 'deploy:update' do
+  run "echo `whoami`" 
   run 'export LANG=en_US.UTF-8'
   run 'export LC_ALL=en_US.UTF-8'
 end
