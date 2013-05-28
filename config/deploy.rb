@@ -1,5 +1,6 @@
 require 'bundler/capistrano'
 set :application, "Insomnia"
+
 default_run_options[:pty] = true 
 set :repository,  "git@github.com:akinsgre/enki.git"
 
@@ -22,7 +23,7 @@ before 'deploy:update' do
 end
 
 after 'deploy:update_code' do
-     run "cp #{current_path}/config/database.example.yml #{release_path}/config/database.yml"
+#     run "cp #{current_path}/config/database.example.yml #{release_path}/config/database.yml"
 end
 
 # if you're still using the script/reaper helper you will need
